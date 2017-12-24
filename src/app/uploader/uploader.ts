@@ -24,6 +24,7 @@ export class UploaderComponent implements OnInit {
     @Input() height: number = 320;
     @Input() quality: number = 90;
     @Input() auto: boolean = true;
+    @Input() max: number = 9;
     @ViewChild(FileSelectDirective) fileSelectDirective: FileSelectDirective;
     plupload: any;
     files: any[] = [];

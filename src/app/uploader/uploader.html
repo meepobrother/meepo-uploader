@@ -1,9 +1,9 @@
 <div class="weui-uploader">
     <div class="weui-uploader__hd">
         <p class="weui-uploader__title">
-            图片上传
+            <ng-content></ng-content>
         </p>
-        <div class="weui-uploader__info">0/2</div>
+        <div class="weui-uploader__info">{{files.length}}/{{max}}</div>
     </div>
     <div class="weui-uploader__bd">
         <ul class="weui-uploader__files">
@@ -17,5 +17,3 @@
         <div class="weui-uploader__input-box" fileSelecter></div>
     </div>
 </div>
-
-<ng-content></ng-content>
