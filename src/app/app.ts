@@ -4,13 +4,16 @@ import { UploaderComponent } from './uploader/uploader';
 import { FileSelectDirective } from './uploader/file-selecter';
 import { UploaderLoaderService } from './loader';
 import { UploaderService } from './uploader.service';
-
+import { MeepoCoreServiceModule } from 'meepo-core';
 @NgModule({
     declarations: [
         UploaderComponent,
         FileSelectDirective
     ],
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+        MeepoCoreServiceModule
+    ],
     exports: [
         UploaderComponent,
         FileSelectDirective
