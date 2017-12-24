@@ -11,7 +11,7 @@ export class UploaderLoaderService {
     ) { }
 
     init() {
-        this._loadSrc('https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/moxie.min.js', 'mOxie', () => {
+        this._loadSrc('https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/moxie.min.js', 'moxie', () => {
             this._loadSrc('https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/plupload.full.min.js', 'plupload', () => {
                 this.load$.next(window['plupload']);
             });
@@ -20,7 +20,12 @@ export class UploaderLoaderService {
 
     _loadSrc(src: string, name: string, cb?: any) {
         if (loadMaps[name]) {
-            this.load$.next({ name: name, libs: loadMaps[name] });
+            loadMaps[name] = window[name];
+            if (cb) {
+                cb(window[name]);
+            } else {
+                this.load$.next({ name: name, libs: window[name] });
+            }
         } else {
             const script = this.document.createElement('script');
             script.src = src;

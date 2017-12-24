@@ -24,7 +24,7 @@ export class UploaderService {
     }
 
     init(plupload: any, browse: any) {
-        this.plupload = plupload;
+        this.plupload = plupload || window['plupload'];
         let url = this.core.murl('entry//upload', { m: 'imeepos_runner' }, false);
         this.uploader = new this.plupload.Uploader({
             browse_button: browse,
