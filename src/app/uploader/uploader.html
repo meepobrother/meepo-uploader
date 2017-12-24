@@ -1,0 +1,21 @@
+<div class="weui-uploader">
+    <div class="weui-uploader__hd">
+        <p class="weui-uploader__title">
+            图片上传
+        </p>
+        <div class="weui-uploader__info">0/2</div>
+    </div>
+    <div class="weui-uploader__bd">
+        <ul class="weui-uploader__files">
+            <li class="weui-uploader__file" (click)="reload(file)" [class.weui-uploader__file_status]="!file.loaded" *ngFor="let file of files;"
+                [style.backgroundImage]="'url('+file.imgsrc+')'">
+                <img style="width: 100%;" *ngIf="file.loaded" [src]="file.url">
+                <div class="file_remove" (click)="remove(file)"></div>
+                <div class="weui-uploader__file-content" *ngIf="!file.loaded">{{file.percent}}%</div>
+            </li>
+        </ul>
+        <div class="weui-uploader__input-box" fileSelecter></div>
+    </div>
+</div>
+
+<ng-content></ng-content>

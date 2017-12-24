@@ -1,0 +1,42 @@
+:host {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.weui-uploader__file {
+    img {
+        width: 100%;
+    }
+}
+
+.weui-uploader__file {
+    position: relative;
+    .file_remove {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background: rgba(0, 0, 0, .5);
+        width: 30px;
+        height: 30px;
+        background-image: url("./close.png");
+        background-size: cover;
+        z-index: 9;
+    }
+}
+
+.meepo_uploader {
+    display: block;
+    width: 3em;
+    height: 2em;
+    font-size: .8em;
+    background-color: red;
+    line-height: 2em;
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    text-align: center;
+}

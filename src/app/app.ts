@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VersionnComponent } from './version';
+import { UploaderComponent } from './uploader/uploader';
+import { FileSelectDirective } from './uploader/file-selecter';
+import { UploaderLoaderService } from './loader';
+import { UploaderService } from './uploader.service';
 
 @NgModule({
     declarations: [
-        VersionnComponent
+        UploaderComponent,
+        FileSelectDirective
     ],
-    imports: [ CommonModule ],
-    exports: [],
-    providers: [],
+    imports: [CommonModule],
+    exports: [
+        UploaderComponent,
+        FileSelectDirective
+    ],
+    providers: [
+        UploaderLoaderService,
+        UploaderService
+    ],
 })
-export class AppModule {}
+export class UploaderModule { }
