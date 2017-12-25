@@ -6,8 +6,23 @@
 }
 
 .weui-uploader__file {
+    overflow: hidden;
     img {
         width: 100%;
+        height: 100%;
+    }
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.weui-uploader__input-box {
+    .meepo_uploader_handel {
+        width: 100%;
+        height: 100%;
+        display: none;
+        visibility: hidden;
     }
 }
 

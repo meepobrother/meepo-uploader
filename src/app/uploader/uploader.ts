@@ -24,7 +24,7 @@ export class UploaderComponent implements OnInit {
     @Input() quality: number = 90;
     @Input() auto: boolean = true;
     @Input() max: number = 9;
-    @ViewChild('fileSelecter') fileSelecter: ElementRef;
+    @ViewChild('fileSelector') fileSelecter: ElementRef;
     plupload: any;
     files: any[] = [];
     constructor(
@@ -32,18 +32,17 @@ export class UploaderComponent implements OnInit {
         public uploader: UploaderService,
         public cd: ChangeDetectorRef
     ) {
-        console.log('this.uploader.time', this.uploader.time);
         this.loader.load$.subscribe(plupload => {
             this.plupload = plupload;
-            console.log('uploader loaded');
             this.init();
         });
         // 添加文件
         this.uploader.fileAdd$.subscribe(files => {
+            console.log(files);
             this.files = files;
-            console.log('add file', this.files);
             if (this.auto) {
                 this.start();
+                console.log('开始上传');
             }
             this.cd.markForCheck();
         });
@@ -91,5 +90,24 @@ export class UploaderComponent implements OnInit {
 
     ngAfterContentInit() {
         this.loader.init();
+    }
+
+    choosePhoto(e: any) {
+        e.preventDefault();
+        let files: any[] = [];
+        if (e.dataTransfer) {
+            files = e.dataTransfer.files;
+        } else if (e.target) {
+            files = e.target.files;
+        }
+        for (let i = 0; i < files.length; i++) {
+            let file = files[i];
+            const reader = new FileReader();
+            reader.onload = () => {
+                file.imgSrc = reader.result;
+                this.uploader.addFile(file);
+            };
+            reader.readAsDataURL(files[0]);
+        }
     }
 }
