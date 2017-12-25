@@ -3299,9 +3299,9 @@ meepo-core@^2.9.2:
     typeorm "^0.1.9"
     zone.js "0.8.4"
 
-meepo-uuid@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/meepo-uuid/-/meepo-uuid-1.0.5.tgz#3d548eed63e70f25e2227d886d56da52a930a7f0"
+meepo-uuid@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/meepo-uuid/-/meepo-uuid-1.0.6.tgz#99f3238bc7747337f92517bf4be18d46f7bc9df9"
   dependencies:
     "@angular/common" "^5.1.0"
     "@angular/core" "^5.1.0"
