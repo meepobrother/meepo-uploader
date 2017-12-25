@@ -34,7 +34,7 @@ export class UploaderService {
             chunk_size: '1mb',
             unique_names: true,
             flash_swf_url: 'https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/Moxie.swf',
-            silverlight_xap_url: 'https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/Moxie.xap',            
+            silverlight_xap_url: 'https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/Moxie.xap',
             filters: {
                 max_file_size: '10m',
                 mime_types: [
@@ -49,7 +49,9 @@ export class UploaderService {
             let oldLen = this.uploader.files.length - files.length;
             this.uploader.files.splice(this.max, this.uploader.files.length);
             files = files.slice(0, this.max - oldLen);
+            let hasAdd = false;
             files.map((file, i) => {
+                console.log('add file');
                 if (!file || !/image\//.test(file.type)) return; //确保文件是图片
                 if (file.type == 'image/gif') {
                     let fr = new window['moxie'].file.FileReader();
@@ -59,6 +61,7 @@ export class UploaderService {
                         fr = null;
                         console.log('add file');
                         this.fileAdd$.next(this.uploader.files);
+                        hasAdd = true;
                     }
                     fr.readAsDataURL(file.getSource());
                 } else {
@@ -74,10 +77,14 @@ export class UploaderService {
                         preloader = null;
                         console.log('add file');
                         this.fileAdd$.next(this.uploader.files);
+                        hasAdd = true;
                     };
                     preloader.load(file.getSource());
                 }
             });
+            if (hasAdd) {
+                this.fileAdd$.next(this.uploader.files);
+            }
         });
         // 上传中...
         this.uploader.bind('UploadProgress', (up, file) => {
