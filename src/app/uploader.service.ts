@@ -93,7 +93,7 @@ export class UploaderService {
         // 文件移除触发
         this.uploader.bind('FilesRemoved', (up, files) => {
             this.filesRemoved$.next(this.uploader.files);
-        })
+        });
         // 上传失败
         this.uploader.bind('Error', (up, err) => {
             this.error$.next(err);

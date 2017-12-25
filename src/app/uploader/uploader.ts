@@ -38,8 +38,9 @@ export class UploaderComponent implements OnInit {
             this.init();
         });
         // 添加文件
-        this.uploader.fileAdd$.debounceTime(300).subscribe(files => {
+        this.uploader.fileAdd$.subscribe(files => {
             this.files = files;
+            console.log('add file');
             if(this.auto){
                 this.start();
             }
