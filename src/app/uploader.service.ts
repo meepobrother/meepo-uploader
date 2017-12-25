@@ -17,10 +17,11 @@ export class UploaderService {
     quality: number = 90;
     max: number = 9;
 
+    time: any = new Date().getTime();
     constructor(
         public core: CoreService
     ) {
-
+        console.log('uploader service', this.time);
     }
 
     init(plupload: any, browse: any) {

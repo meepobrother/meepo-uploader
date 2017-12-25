@@ -6,9 +6,12 @@ import "rxjs/add/operator/take";
 @Injectable()
 export class UploaderLoaderService {
     load$: Subject<any> = new Subject();
+    time: any = new Date().getTime();
     constructor(
         @Inject(DOCUMENT) public document: any
-    ) { }
+    ) {
+        console.log('uploader time ', this.time);
+    }
 
     init() {
         this._loadSrc('https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/moxie.min.js', 'moxie', () => {
