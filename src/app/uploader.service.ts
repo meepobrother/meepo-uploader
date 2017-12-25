@@ -51,7 +51,7 @@ export class UploaderService {
             files = files.slice(0, this.max - oldLen);
             let hasAdd = false;
             files.map((file, i) => {
-                console.log('add file');
+                console.log('add file ' + i);
                 if (!file || !/image\//.test(file.type)) return; //确保文件是图片
                 if (file.type == 'image/gif') {
                     let fr = new window['moxie'].file.FileReader();
@@ -59,7 +59,7 @@ export class UploaderService {
                         file.imgsrc = fr.result;
                         fr.destroy();
                         fr = null;
-                        console.log('add file');
+                        console.log('add file img src');
                         this.fileAdd$.next(this.uploader.files);
                         hasAdd = true;
                     }
@@ -75,7 +75,7 @@ export class UploaderService {
                         file.imgsrc = imgsrc;
                         preloader.destroy();
                         preloader = null;
-                        console.log('add file');
+                        console.log('add file img src');
                         this.fileAdd$.next(this.uploader.files);
                         hasAdd = true;
                     };

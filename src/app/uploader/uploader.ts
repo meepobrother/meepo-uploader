@@ -32,6 +32,7 @@ export class UploaderComponent implements OnInit {
         public uploader: UploaderService,
         public cd: ChangeDetectorRef
     ) {
+        console.log('this.uploader.time', this.uploader.time);
         this.loader.load$.subscribe(plupload => {
             this.plupload = plupload;
             console.log('uploader loaded');
@@ -40,8 +41,8 @@ export class UploaderComponent implements OnInit {
         // 添加文件
         this.uploader.fileAdd$.subscribe(files => {
             this.files = files;
-            console.log('add file');
-            if(this.auto){
+            console.log('add file', this.files);
+            if (this.auto) {
                 this.start();
             }
             this.cd.markForCheck();
