@@ -72,6 +72,7 @@ export class UploaderService {
                         file.imgsrc = imgsrc;
                         preloader.destroy();
                         preloader = null;
+                        console.log('add file');
                         this.fileAdd$.next(this.uploader.files);
                     };
                     preloader.load(file.getSource());
@@ -103,6 +104,7 @@ export class UploaderService {
             this.error$.next(err);
         });
         this.uploader.init();
+        console.log(this.uploader);
     }
 
     start() {
@@ -116,9 +118,5 @@ export class UploaderService {
 
     reload(file) {
         this.uploader.refresh();
-    }
-
-    previewImage(file, callback) {
-        let source = file.getSource();
     }
 }

@@ -1,10 +1,9 @@
 import {
     Component, OnInit, ContentChild, AfterContentInit,
     ChangeDetectionStrategy, ChangeDetectorRef, Input,
-    ViewChild
+    ViewChild, ElementRef
 } from '@angular/core';
 
-import { FileSelectDirective } from './file-selecter';
 import { UploaderLoaderService } from '../loader';
 import { UploaderService } from '../uploader.service';
 
@@ -25,7 +24,7 @@ export class UploaderComponent implements OnInit {
     @Input() quality: number = 90;
     @Input() auto: boolean = true;
     @Input() max: number = 9;
-    @ViewChild(FileSelectDirective) fileSelectDirective: FileSelectDirective;
+    @ViewChild('fileSelecter') fileSelecter: ElementRef;
     plupload: any;
     files: any[] = [];
     constructor(
@@ -35,6 +34,7 @@ export class UploaderComponent implements OnInit {
     ) {
         this.loader.load$.subscribe(plupload => {
             this.plupload = plupload;
+            console.log('uploader loaded');
             this.init();
         });
         // 添加文件
@@ -71,7 +71,7 @@ export class UploaderComponent implements OnInit {
     }
 
     init() {
-        this.uploader.init(this.plupload, this.fileSelectDirective.ele.nativeElement);
+        this.uploader.init(this.plupload, this.fileSelecter.nativeElement);
     }
 
     start() {
