@@ -55,6 +55,7 @@ export class UploaderService {
                         file.imgsrc = fr.result;
                         fr.destroy();
                         fr = null;
+                        console.log('add file');
                         this.fileAdd$.next(this.uploader.files);
                     }
                     fr.readAsDataURL(file.getSource());
