@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { CoreService } from 'meepo-core';
+import { UuidService } from 'meepo-uuid';
 @Injectable()
 export class UploaderService {
     uploader: any;
@@ -17,9 +18,10 @@ export class UploaderService {
     quality: number = 90;
     max: number = 9;
 
-    time: any = new Date().getTime();
+    time: any = this.uuid.v1();
     constructor(
-        public core: CoreService
+        public core: CoreService,
+        public uuid: UuidService
     ) {
         console.log('uploader service', this.time);
     }

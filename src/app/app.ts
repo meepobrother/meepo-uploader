@@ -4,13 +4,15 @@ import { UploaderComponent } from './uploader/uploader';
 import { UploaderLoaderService } from './loader';
 import { UploaderService } from './uploader.service';
 import { MeepoCoreServiceModule } from 'meepo-core';
+import { UuidModule } from 'meepo-uuid';
 @NgModule({
     declarations: [
         UploaderComponent
     ],
     imports: [
         CommonModule,
-        MeepoCoreServiceModule
+        MeepoCoreServiceModule,
+        UuidModule
     ],
     exports: [
         UploaderComponent

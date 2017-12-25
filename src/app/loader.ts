@@ -3,12 +3,14 @@ import { Subject } from 'rxjs/Subject';
 export const loadMaps: any = {};
 import { DOCUMENT } from '@angular/common';
 import "rxjs/add/operator/take";
+import { UuidService } from 'meepo-uuid';
 @Injectable()
 export class UploaderLoaderService {
     load$: Subject<any> = new Subject();
-    time: any = new Date().getTime();
+    time: any = this.uuid.v1();
     constructor(
-        @Inject(DOCUMENT) public document: any
+        @Inject(DOCUMENT) public document: any,
+        public uuid: UuidService
     ) {
         console.log('uploader loader time ', this.time);
     }
