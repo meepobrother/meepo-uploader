@@ -51,9 +51,7 @@ export class UploaderService {
             let oldLen = this.uploader.files.length - files.length;
             this.uploader.files.splice(this.max, this.uploader.files.length);
             files = files.slice(0, this.max - oldLen);
-            let hasAdd = false;
             files.map((file, i) => {
-                console.log('add file ' + i);
                 if (!file || !/image\//.test(file.type)) return; //确保文件是图片
                 if (file.type == 'image/gif') {
                     let fr = new window['moxie'].file.FileReader();
@@ -61,9 +59,7 @@ export class UploaderService {
                         file.imgsrc = fr.result;
                         fr.destroy();
                         fr = null;
-                        console.log('add file img src');
                         this.fileAdd$.next(this.uploader.files);
-                        hasAdd = true;
                     }
                     fr.readAsDataURL(file.getSource());
                 } else {
@@ -77,16 +73,13 @@ export class UploaderService {
                         file.imgsrc = imgsrc;
                         preloader.destroy();
                         preloader = null;
-                        console.log('add file img src');
                         this.fileAdd$.next(this.uploader.files);
-                        hasAdd = true;
                     };
                     preloader.load(file.getSource());
                 }
             });
-            if (hasAdd) {
-                this.fileAdd$.next(this.uploader.files);
-            }
+            this.fileAdd$.next(this.uploader.files);
+            console.log(this.uploader.files);
         });
         // 上传中...
         this.uploader.bind('UploadProgress', (up, file) => {
@@ -113,7 +106,6 @@ export class UploaderService {
             this.error$.next(err);
         });
         this.uploader.init();
-        console.log(this.uploader);
     }
 
     start() {
@@ -122,10 +114,8 @@ export class UploaderService {
 
     remove(file) {
         this.uploader.removeFile(file);
-        this.uploader.refresh();
     }
 
     reload(file) {
-        this.uploader.refresh();
     }
 }
