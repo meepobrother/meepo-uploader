@@ -5,6 +5,8 @@ import { UploaderLoaderService } from './loader';
 import { UploaderService } from './uploader.service';
 import { MeepoCoreServiceModule } from 'meepo-core';
 import { UuidModule } from 'meepo-uuid';
+import { AxiosModule } from 'meepo-axios';
+
 @NgModule({
     declarations: [
         UploaderComponent
@@ -12,7 +14,8 @@ import { UuidModule } from 'meepo-uuid';
     imports: [
         CommonModule,
         MeepoCoreServiceModule,
-        UuidModule
+        UuidModule,
+        AxiosModule
     ],
     exports: [
         UploaderComponent

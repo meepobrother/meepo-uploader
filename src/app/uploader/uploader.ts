@@ -6,17 +6,16 @@ import {
 
 import { UploaderLoaderService } from '../loader';
 import { UploaderService } from '../uploader.service';
+import { AxiosService } from 'meepo-axios';
+import { CoreService } from 'meepo-core';
+
 
 @Component({
     selector: 'uploader',
-    templateUrl: 'uploader.html',
-    providers: [
-        UploaderService
-    ],
+    templateUrl: './uploader.html',
+    providers: [UploaderService],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    styleUrls: [
-        './uploader.scss'
-    ]
+    styleUrls: ['./uploader.scss']
 })
 export class UploaderComponent implements OnInit {
     @Input() width: number = 320;
@@ -30,7 +29,9 @@ export class UploaderComponent implements OnInit {
     constructor(
         public loader: UploaderLoaderService,
         public uploader: UploaderService,
-        public cd: ChangeDetectorRef
+        public cd: ChangeDetectorRef,
+        public axios: AxiosService,
+        public core: CoreService
     ) {
         this.loader.load$.subscribe(plupload => {
             this.plupload = plupload;
@@ -38,11 +39,9 @@ export class UploaderComponent implements OnInit {
         });
         // 添加文件
         this.uploader.fileAdd$.subscribe(files => {
-            console.log(files);
             this.files = files;
             if (this.auto) {
                 this.start();
-                console.log('开始上传');
             }
             this.cd.markForCheck();
         });
@@ -50,7 +49,7 @@ export class UploaderComponent implements OnInit {
         this.uploader.fileProgress$.subscribe(file => {
             this.files.map(res => {
                 if (res.id === file.id) {
-                    res = file;
+                    res = file; 
                 }
             });
             this.cd.detectChanges();
@@ -82,8 +81,11 @@ export class UploaderComponent implements OnInit {
         this.uploader.reload(file);
     }
 
-    remove(file) {
+    remove(file: any) {
         this.uploader.remove(file);
+        if (file.url) {
+
+        }
     }
 
     ngOnInit() { }
@@ -109,5 +111,13 @@ export class UploaderComponent implements OnInit {
             };
             reader.readAsDataURL(files[0]);
         }
+    }
+
+    test(e: any) {
+        let url = this.core.murl('entry//upload', { m: 'imeepos_runner' }, false);
+        this.axios.post(url, { text: 1 }).then(res => {
+            console.log(res);
+        });
+        this.start();
     }
 }

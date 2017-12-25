@@ -32,11 +32,8 @@ export class UploaderService {
         this.uploader = new this.plupload.Uploader({
             browse_button: brower,
             url: this.core.murl('entry//upload', { m: 'imeepos_runner' }, false),
-            chunk_size: '1mb',
-            unique_names: true,
             flash_swf_url: 'https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/Moxie.swf',
             silverlight_xap_url: 'https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/Moxie.xap',
-            resize: { width: this.width, height: this.height, quality: this.quality },
         });
         // 添加文件
         this.uploader.bind('FilesAdded', (up, files: any[]) => {
@@ -48,14 +45,17 @@ export class UploaderService {
         });
         // 上传中...
         this.uploader.bind('UploadProgress', (up, file) => {
+            console.log(file);
             this.fileProgress$.next(file);
         });
         // 全部上传完成
         this.uploader.bind('UploadComplete', (up, files) => {
-
+            console.log(files);
         });
         // 单个文件上传完成
         this.uploader.bind('FileUploaded', (up, file, info) => {
+            console.log(info);
+            console.log(up);
             let response = info.response;
             let result = JSON.parse(response);
             if (result.url) {
@@ -88,7 +88,8 @@ export class UploaderService {
     }
 
     addFile(file: any) {
-        this.uploader.addFile(file, name);
-        this.uploader.files[this.uploader.files.length - 1].imgSrc = file.imgSrc;
+        // let name = this.uuid.v1();
+        this.uploader.addFile(file);
+        // this.uploader.files[this.uploader.files.length - 1].imgSrc = file.imgSrc;
     }
 }
