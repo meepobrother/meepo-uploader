@@ -10,7 +10,7 @@ export class UploaderLoaderService {
     constructor(
         @Inject(DOCUMENT) public document: any
     ) {
-        console.log('uploader time ', this.time);
+        console.log('uploader loader time ', this.time);
     }
 
     init() {

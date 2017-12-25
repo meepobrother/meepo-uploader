@@ -426,6 +426,10 @@ autoprefixer@^6.3.1, autoprefixer@^6.5.3:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
+autosize@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/autosize/-/autosize-4.0.0.tgz#7a0599b1ba84d73bd7589b0d9da3870152c69237"
+
 aws-sign2@~0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.6.0.tgz#14342dd38dbcc94d0e5b87d763cd63612c0e794f"
@@ -437,6 +441,13 @@ aws-sign2@~0.7.0:
 aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
+
+axios@^0.17.1:
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.1.tgz#2d8e3e5d0bdbd7327f91bc814f5c57660f81824d"
+  dependencies:
+    follow-redirects "^1.2.5"
+    is-buffer "^1.1.5"
 
 babel-code-frame@^6.11.0, babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -2003,6 +2014,12 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.1"
     readable-stream "^2.0.4"
 
+follow-redirects@^1.2.5:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.2.6.tgz#4dcdc7e4ab3dd6765a97ff89c3b4c258117c79bf"
+  dependencies:
+    debug "^3.1.0"
+
 for-in@^0.1.3:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
@@ -2883,7 +2900,7 @@ istanbul-lib-instrument@^1.1.3:
     istanbul-lib-coverage "^1.1.1"
     semver "^5.3.0"
 
-js-base64@^2.1.8, js-base64@^2.1.9:
+js-base64@^2.1.8, js-base64@^2.1.9, js-base64@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.0.tgz#9e566fee624751a1d720c966cd6226d29d4025aa"
 
@@ -3285,6 +3302,61 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
+meepo-autosize@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/meepo-autosize/-/meepo-autosize-1.0.8.tgz#97d8becb386a99028f1f2ac5e4193c9fda3ba07e"
+  dependencies:
+    "@angular/common" "^5.1.0"
+    "@angular/core" "^5.1.0"
+    "@angular/platform-browser" "^5.1.0"
+    autosize "^4.0.0"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    zone.js "0.8.4"
+
+meepo-axios@^1.1.6:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/meepo-axios/-/meepo-axios-1.1.9.tgz#0fb2210a72a07dc13d6272a4f4f4342bf4951318"
+  dependencies:
+    "@angular/common" "^5.1.0"
+    "@angular/core" "^5.1.0"
+    "@angular/platform-browser" "^5.1.0"
+    axios "^0.17.1"
+    meepo-base64 "^1.0.9"
+    meepo-core "^2.8.0"
+    reflect-metadata "~0.1.10"
+    rxjs "^5.5.0"
+    zone.js "0.8.4"
+
+meepo-base64@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/meepo-base64/-/meepo-base64-1.0.9.tgz#4150cf63808818cdfa5c7f98dd57d82e9f2f7717"
+  dependencies:
+    "@angular/common" "^5.1.0"
+    "@angular/core" "^5.1.0"
+    "@angular/platform-browser" "^5.1.0"
+    js-base64 "^2.4.0"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    zone.js "0.8.4"
+
+meepo-bmap@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/meepo-bmap/-/meepo-bmap-2.8.0.tgz#da140002ab90c67c1424b835fbff22b37729ef97"
+  dependencies:
+    "@angular/common" "^5.1.0"
+    "@angular/core" "^5.1.0"
+    "@angular/platform-browser" "^5.1.0"
+    meepo-axios "^1.1.6"
+    meepo-base64 "^1.0.9"
+    meepo-core "^2.9.2"
+    mysql "^2.15.0"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.0"
+    store "^2.0.12"
+    typeorm "^0.1.9"
+    zone.js "0.8.4"
+
 meepo-core@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-2.8.0.tgz#79f05943af8eb86215ea4a60a75bcdfb3c2f294e"
@@ -3297,6 +3369,63 @@ meepo-core@^2.8.0:
     reflect-metadata "^0.1.10"
     rxjs "^5.5.5"
     typeorm "^0.1.9"
+    zone.js "0.8.4"
+
+meepo-core@^2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-2.9.2.tgz#3cbd6112b7b136fe811f9f96467e2bc5f686a204"
+  dependencies:
+    "@angular/common" "^5.1.0"
+    "@angular/core" "^5.1.0"
+    "@angular/platform-browser" "^5.1.0"
+    meepo-xscroll "^1.2.8"
+    mysql "^2.15.0"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    typeorm "^0.1.9"
+    zone.js "0.8.4"
+
+meepo-forms@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/meepo-forms/-/meepo-forms-1.1.3.tgz#abf4aece53c515642b7f7bd3ef785da713e52494"
+  dependencies:
+    "@angular/common" "^5.1.0"
+    "@angular/core" "^5.1.0"
+    "@angular/platform-browser" "^5.1.0"
+    meepo-autosize "^1.0.8"
+    meepo-bmap "^2.8.0"
+    meepo-uploader "^1.1.0"
+    meepo-uuid "^1.0.5"
+    mysql "^2.15.0"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    typeorm "^0.1.9"
+    zone.js "0.8.4"
+
+meepo-uploader@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/meepo-uploader/-/meepo-uploader-1.1.0.tgz#6a9ad391639b75b86375a55fe98e58646699cf3c"
+  dependencies:
+    "@angular/common" "^5.1.0"
+    "@angular/core" "^5.1.0"
+    "@angular/platform-browser" "^5.1.0"
+    meepo-core "^2.8.0"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    typeorm "^0.1.9"
+    zone.js "0.8.4"
+
+meepo-uuid@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/meepo-uuid/-/meepo-uuid-1.0.5.tgz#3d548eed63e70f25e2227d886d56da52a930a7f0"
+  dependencies:
+    "@angular/common" "^5.1.0"
+    "@angular/core" "^5.1.0"
+    "@angular/platform-browser" "^5.1.0"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    typeorm "^0.1.9"
+    uuid "^3.1.0"
     zone.js "0.8.4"
 
 meepo-xscroll@^1.2.8:
@@ -4663,7 +4792,7 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-reflect-metadata@^0.1.10, reflect-metadata@^0.1.2:
+reflect-metadata@^0.1.10, reflect-metadata@^0.1.2, reflect-metadata@~0.1.10:
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.10.tgz#b4f83704416acad89988c9b15635d47e03b9344a"
 
@@ -4928,6 +5057,12 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   resolved "https://registry.yarnpkg.com/run-queue/-/run-queue-1.0.3.tgz#e848396f057d223f24386924618e25694161ec47"
   dependencies:
     aproba "^1.1.1"
+
+rxjs@^5.5.0:
+  version "5.5.6"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.6.tgz#e31fb96d6fd2ff1fd84bcea8ae9c02d007179c02"
+  dependencies:
+    symbol-observable "1.0.1"
 
 rxjs@^5.5.2, rxjs@^5.5.5:
   version "5.5.5"
@@ -5304,6 +5439,10 @@ stdout-stream@^1.4.0:
   resolved "https://registry.yarnpkg.com/stdout-stream/-/stdout-stream-1.4.0.tgz#a2c7c8587e54d9427ea9edb3ac3f2cd522df378b"
   dependencies:
     readable-stream "^2.0.1"
+
+store@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/store/-/store-2.0.12.tgz#8c534e2a0b831f72b75fc5f1119857c44ef5d593"
 
 stream-browserify@^2.0.1:
   version "2.0.1"

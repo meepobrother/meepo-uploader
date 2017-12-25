@@ -25,14 +25,16 @@ export class UploaderService {
     }
 
     init(plupload: any, browse: any) {
+        console.log('uploader 初始化');
         this.plupload = plupload || window['plupload'];
         let url = this.core.murl('entry//upload', { m: 'imeepos_runner' }, false);
         this.uploader = new this.plupload.Uploader({
             browse_button: browse,
             url: this.core.murl('entry//upload', { m: 'imeepos_runner' }, false),
             chunk_size: '1mb',
-            runtimes: 'html5',
             unique_names: true,
+            flash_swf_url: 'https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/Moxie.swf',
+            silverlight_xap_url: 'https://meepo.com.cn/meepo/libs/plupload-2.3.6/js/Moxie.xap',            
             filters: {
                 max_file_size: '10m',
                 mime_types: [
