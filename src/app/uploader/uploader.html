@@ -7,7 +7,7 @@
     </div>
     <div class="weui-uploader__bd">
         <ul class="weui-uploader__files">
-            <li class="weui-uploader__file" (click)="reload(file)" [class.weui-uploader__file_status]="!file.finished" *ngFor="let file of uploader.uploader?.files"
+            <li class="weui-uploader__file" (click)="reload(file)" [class.weui-uploader__file_status]="!file.finished" *ngFor="let file of files"
                 [style.background-image]="'url('+file.imgSrc+')'">
                 <img style="width: 100%;" *ngIf="file.finished && file.type.indexOf('image')>-1" [src]="file.url" />
                 <video style="width: 100%;" *ngIf="file.finished && file.type.indexOf('video')>-1" [src]="file.url"></video>

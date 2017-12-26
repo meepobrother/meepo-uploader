@@ -118,6 +118,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/forms@5.2.0-beta.1":
+  version "5.2.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-5.2.0-beta.1.tgz#f32dabf92a22b9cdc46e2a50bbbf48f154f0c558"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/platform-browser-dynamic@5.2.0-beta.1":
   version "5.2.0-beta.1"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.0-beta.1.tgz#c0228aeaac78901a2d5c1770a3737113f89fb53c"
@@ -3228,6 +3234,28 @@ meepo-core@^2.9.4:
     rxjs "^5.5.5"
     zone.js "0.8.4"
 
+meepo-jssdk@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/meepo-jssdk/-/meepo-jssdk-1.0.2.tgz#5636854c2fdf1e265b63199a85f7e87d96e0e590"
+  dependencies:
+    "@angular/common" "5.2.0-beta.1"
+    "@angular/core" "5.2.0-beta.1"
+    "@angular/forms" "5.2.0-beta.1"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    zone.js "0.8.4"
+
+meepo-ua@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/meepo-ua/-/meepo-ua-1.0.0.tgz#175d3bfeeceb219458d1fe7449e81f3b76507433"
+  dependencies:
+    "@angular/common" "5.2.0-beta.1"
+    "@angular/core" "5.2.0-beta.1"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    ua-parser-js "^0.7.17"
+    zone.js "0.8.4"
+
 meepo-uuid@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/meepo-uuid/-/meepo-uuid-1.0.8.tgz#834e13cf8e12745ab19d3a303844b50988dabf0c"
@@ -5542,6 +5570,10 @@ typescript@~2.4.2:
 typescript@~2.6.1:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
+
+ua-parser-js@^0.7.17:
+  version "0.7.17"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
 
 uglify-es@^3.2.1:
   version "3.3.2"

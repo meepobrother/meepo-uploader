@@ -9,7 +9,8 @@ import { UploaderService } from '../uploader.service';
 import { AxiosService } from 'meepo-axios';
 import { CoreService } from 'meepo-core';
 
-
+import { UaService } from 'meepo-ua';
+import { WxService } from 'meepo-jssdk';
 @Component({
     selector: 'uploader',
     templateUrl: './uploader.html',
@@ -31,7 +32,9 @@ export class UploaderComponent implements OnInit {
         public uploader: UploaderService,
         public cd: ChangeDetectorRef,
         public axios: AxiosService,
-        public core: CoreService
+        public core: CoreService,
+        public ua: UaService,
+        public wx: WxService
     ) {
         this.loader.load$.subscribe(plupload => {
             this.plupload = plupload;
@@ -49,7 +52,7 @@ export class UploaderComponent implements OnInit {
         this.uploader.fileProgress$.subscribe(file => {
             this.files.map(res => {
                 if (res.id === file.id) {
-                    res = file; 
+                    res = file;
                 }
             });
             this.cd.detectChanges();
@@ -82,42 +85,57 @@ export class UploaderComponent implements OnInit {
     }
 
     remove(file: any) {
-        this.uploader.remove(file);
-        if (file.url) {
-
+        if (this.ua.isWechat()) {
+            let index = this.files.indexOf(file);
+            this.files.splice(index, 1);
+        } else {
+            this.uploader.remove(file);
         }
     }
 
     ngOnInit() { }
 
     ngAfterContentInit() {
-        this.loader.init();
+        if (this.ua.isWechat()) {
+
+        } else {
+            this.loader.init();
+        }
     }
 
     choosePhoto(e: any) {
-        e.preventDefault();
-        let files: any[] = [];
-        if (e.dataTransfer) {
-            files = e.dataTransfer.files;
-        } else if (e.target) {
-            files = e.target.files;
+        // 微信上传文件
+        if (this.ua.isWechat()) {
+            this.wx.chooseImage(this.max).subscribe(res => {
+                res.map(id => {
+                    this.wx.uploadImage(id).subscribe(sid => {
+                        let url = this.core.murl('entry//open', { __do: 'audio.image' }, false);
+                        this.axios.bpost(url, { serverId: sid }).then(res => {
+                            this.files.push({
+                                finished: true,
+                                src: res
+                            });
+                        });
+                    });
+                })
+            });
+        } else {
+            e.preventDefault();
+            let files: any[] = [];
+            if (e.dataTransfer) {
+                files = e.dataTransfer.files;
+            } else if (e.target) {
+                files = e.target.files;
+            }
+            for (let i = 0; i < files.length; i++) {
+                let file = files[i];
+                const reader = new FileReader();
+                reader.onload = () => {
+                    file.imgSrc = reader.result;
+                    this.uploader.addFile(file);
+                };
+                reader.readAsDataURL(files[0]);
+            }
         }
-        for (let i = 0; i < files.length; i++) {
-            let file = files[i];
-            const reader = new FileReader();
-            reader.onload = () => {
-                file.imgSrc = reader.result;
-                this.uploader.addFile(file);
-            };
-            reader.readAsDataURL(files[0]);
-        }
-    }
-
-    test(e: any) {
-        let url = this.core.murl('entry//upload', { m: 'imeepos_runner' }, false);
-        this.axios.post(url, { text: 1 }).then(res => {
-            console.log(res);
-        });
-        this.start();
     }
 }

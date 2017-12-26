@@ -1,6 +1,6 @@
 {
     "name": "meepo-uploader",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "uploader for angular",
     "main": "./bundles/meepo.umd.js",
     "module": "./esm5/meepo.js",
@@ -49,9 +49,11 @@
         "@angular/common": "5.2.0-beta.1",
         "@angular/core": "5.2.0-beta.1",
         "@angular/platform-browser": "5.2.0-beta.1",
-        "meepo-axios": "^1.2.0",
-        "meepo-core": "^2.9.4",
-        "meepo-uuid": "^1.0.8",
+        "meepo-axios": ">=1.2.0",
+        "meepo-core": ">=2.9.4",
+        "meepo-jssdk": ">=1.0.2",
+        "meepo-ua": ">=1.0.0",
+        "meepo-uuid": ">=1.0.8",
         "reflect-metadata": "^0.1.10",
         "rxjs": "^5.5.0",
         "zone.js": "^0.8.4"
