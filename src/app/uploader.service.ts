@@ -45,17 +45,13 @@ export class UploaderService {
         });
         // 上传中...
         this.uploader.bind('UploadProgress', (up, file) => {
-            console.log(file);
             this.fileProgress$.next(file);
         });
         // 全部上传完成
         this.uploader.bind('UploadComplete', (up, files) => {
-            console.log(files);
         });
         // 单个文件上传完成
         this.uploader.bind('FileUploaded', (up, file, info) => {
-            console.log(info);
-            console.log(up);
             let response = info.response;
             let result = JSON.parse(response);
             if (result.url) {
@@ -88,8 +84,6 @@ export class UploaderService {
     }
 
     addFile(file: any) {
-        // let name = this.uuid.v1();
         this.uploader.addFile(file);
-        // this.uploader.files[this.uploader.files.length - 1].imgSrc = file.imgSrc;
     }
 }
