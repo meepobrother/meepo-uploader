@@ -112,7 +112,7 @@ export class UploaderComponent implements OnInit {
             this.wx.chooseImage(this.max).subscribe(res => {
                 res.map(id => {
                     this.wx.uploadImage(id).subscribe(sid => {
-                        let url = this.core.murl('entry//open', { __do: 'audio.image' }, false);
+                        let url = this.core.murl('entry//open', { __do: 'audio.image', m: 'imeepos_runner' }, false);
                         this.axios.bpost(url, { serverId: sid }).then((res: any) => {
                             this.files.push({
                                 finished: true,
