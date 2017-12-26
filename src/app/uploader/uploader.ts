@@ -27,6 +27,8 @@ export class UploaderComponent implements OnInit {
     @ViewChild('fileSelector') fileSelecter: ElementRef;
     plupload: any;
     files: any[] = [];
+
+    isWechat: boolean = false;
     constructor(
         public loader: UploaderLoaderService,
         public uploader: UploaderService,
@@ -93,7 +95,9 @@ export class UploaderComponent implements OnInit {
         }
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.isWechat = this.ua.isWechat();
+    }
 
     ngAfterContentInit() {
         if (this.ua.isWechat()) {
@@ -103,39 +107,39 @@ export class UploaderComponent implements OnInit {
         }
     }
 
-    choosePhoto(e: any) {
-        // 微信上传文件
-        if (this.ua.isWechat()) {
-            this.wx.chooseImage(this.max).subscribe(res => {
-                res.map(id => {
-                    this.wx.uploadImage(id).subscribe(sid => {
-                        let url = this.core.murl('entry//open', { __do: 'audio.image' }, false);
-                        this.axios.bpost(url, { serverId: sid }).then(res => {
-                            this.files.push({
-                                finished: true,
-                                src: res
-                            });
+    wechatUplaoder() {
+        this.wx.chooseImage(this.max).subscribe(res => {
+            res.map(id => {
+                this.wx.uploadImage(id).subscribe(sid => {
+                    let url = this.core.murl('entry//open', { __do: 'audio.image' }, false);
+                    this.axios.bpost(url, { serverId: sid }).then(res => {
+                        this.files.push({
+                            finished: true,
+                            src: res
                         });
+                        this.cd.detectChanges();
                     });
-                })
-            });
-        } else {
-            e.preventDefault();
-            let files: any[] = [];
-            if (e.dataTransfer) {
-                files = e.dataTransfer.files;
-            } else if (e.target) {
-                files = e.target.files;
-            }
-            for (let i = 0; i < files.length; i++) {
-                let file = files[i];
-                const reader = new FileReader();
-                reader.onload = () => {
-                    file.imgSrc = reader.result;
-                    this.uploader.addFile(file);
-                };
-                reader.readAsDataURL(files[0]);
-            }
+                });
+            })
+        });
+    }
+
+    choosePhoto(e: any) {
+        e.preventDefault();
+        let files: any[] = [];
+        if (e.dataTransfer) {
+            files = e.dataTransfer.files;
+        } else if (e.target) {
+            files = e.target.files;
+        }
+        for (let i = 0; i < files.length; i++) {
+            let file = files[i];
+            const reader = new FileReader();
+            reader.onload = () => {
+                file.imgSrc = reader.result;
+                this.uploader.addFile(file);
+            };
+            reader.readAsDataURL(files[0]);
         }
     }
 }
