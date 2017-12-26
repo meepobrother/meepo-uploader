@@ -108,20 +108,22 @@ export class UploaderComponent implements OnInit {
     }
 
     wechatUplaoder() {
-        this.wx.chooseImage(this.max).subscribe(res => {
-            res.map(id => {
-                this.wx.uploadImage(id).subscribe(sid => {
-                    let url = this.core.murl('entry//open', { __do: 'audio.image' }, false);
-                    this.axios.bpost(url, { serverId: sid }).then(res => {
-                        this.files.push({
-                            finished: true,
-                            src: res
+        if (this.isWechat) {
+            this.wx.chooseImage(this.max).subscribe(res => {
+                res.map(id => {
+                    this.wx.uploadImage(id).subscribe(sid => {
+                        let url = this.core.murl('entry//open', { __do: 'audio.image' }, false);
+                        this.axios.bpost(url, { serverId: sid }).then(res => {
+                            this.files.push({
+                                finished: true,
+                                src: res
+                            });
+                            this.cd.detectChanges();
                         });
-                        this.cd.detectChanges();
                     });
-                });
-            })
-        });
+                })
+            });
+        }
     }
 
     choosePhoto(e: any) {
