@@ -17,7 +17,7 @@
         </ul>
         <div class="weui-uploader__input-box" (click)="wechatUplaoder()">
             <div class="meepo_uploader_handel" #fileSelector></div>
-            <input *ngIf="!isWechat" (change)="choosePhoto($event)" class="weui-uploader__input" type="file" multiple capture="microphone">
+            <input *ngIf="!isWechat" (change)="choosePhoto($event)" class="weui-uploader__input" type="file" multiple [attr.capture]=" isAndroid ? 'microphone' : ''">
         </div>
     </div>
 </div>

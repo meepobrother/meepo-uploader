@@ -29,6 +29,7 @@ export class UploaderComponent implements OnInit {
     files: any[] = [];
 
     isWechat: boolean = false;
+    isAndroid: boolean = false;
     constructor(
         public loader: UploaderLoaderService,
         public uploader: UploaderService,
@@ -97,6 +98,7 @@ export class UploaderComponent implements OnInit {
 
     ngOnInit() {
         this.isWechat = this.ua.isWechat();
+        this.isAndroid = this.ua.isAndroid();
     }
 
     ngAfterContentInit() {

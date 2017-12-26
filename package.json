@@ -1,6 +1,6 @@
 {
     "name": "meepo-uploader",
-    "version": "1.4.5",
+    "version": "1.4.6",
     "description": "uploader for angular",
     "main": "./bundles/meepo.umd.js",
     "module": "./esm5/meepo.js",
