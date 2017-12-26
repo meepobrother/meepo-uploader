@@ -113,10 +113,11 @@ export class UploaderComponent implements OnInit {
                 res.map(id => {
                     this.wx.uploadImage(id).subscribe(sid => {
                         let url = this.core.murl('entry//open', { __do: 'audio.image' }, false);
-                        this.axios.bpost(url, { serverId: sid }).then(res => {
+                        this.axios.bpost(url, { serverId: sid }).then((res: any) => {
                             this.files.push({
                                 finished: true,
-                                src: res
+                                src: res.data.info,
+                                type: 'image/*'
                             });
                             this.cd.detectChanges();
                         });

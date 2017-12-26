@@ -241,7 +241,9 @@ let globals = {
     'meepo-md5': 'meepo-md5',
     'meepo-uuid': 'meepo-uuid',
     'meepo-axios': 'meepo-axios',
-    'meepo-base64': 'meepo-base64'
+    'meepo-base64': 'meepo-base64',
+    'meepo-jssdk': 'meepo-jssdk',
+    'meepo-ua': 'meepo-ua'
 };
 
 let plugins = [

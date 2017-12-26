@@ -8,6 +8,7 @@ import { UuidModule } from 'meepo-uuid';
 import { AxiosModule } from 'meepo-axios';
 import { UaModule } from 'meepo-ua';
 import { JssdkModule } from 'meepo-jssdk';
+
 @NgModule({
     declarations: [
         UploaderComponent
