@@ -3196,7 +3196,7 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
-meepo-axios@^1.2.0:
+meepo-axios@>=1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/meepo-axios/-/meepo-axios-1.2.0.tgz#66d4c415917e7bfcef3173450d71caa052ea3f28"
   dependencies:
@@ -3222,6 +3222,18 @@ meepo-base64@^1.1.1:
     rxjs "^5.5.5"
     zone.js "0.8.4"
 
+meepo-core@>=2.9.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-3.0.4.tgz#e46ebcee28830da5d81b6dd2141ea46df4ac74e7"
+  dependencies:
+    "@angular/common" "5.2.0-beta.1"
+    "@angular/core" "5.2.0-beta.1"
+    "@angular/platform-browser" "5.2.0-beta.1"
+    meepo-xscroll ">=1.2.9"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    zone.js "0.8.4"
+
 meepo-core@^2.9.4:
   version "2.9.9"
   resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-2.9.9.tgz#8ba9d60f7135b0364e209e3fb8712c0a69b50953"
@@ -3234,9 +3246,9 @@ meepo-core@^2.9.4:
     rxjs "^5.5.5"
     zone.js "0.8.4"
 
-meepo-jssdk@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/meepo-jssdk/-/meepo-jssdk-1.0.2.tgz#5636854c2fdf1e265b63199a85f7e87d96e0e590"
+meepo-jssdk@>=1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/meepo-jssdk/-/meepo-jssdk-1.0.3.tgz#8abfd655be74b97afee64127db47f574cbf33ea0"
   dependencies:
     "@angular/common" "5.2.0-beta.1"
     "@angular/core" "5.2.0-beta.1"
@@ -3245,7 +3257,7 @@ meepo-jssdk@^1.0.2:
     rxjs "^5.5.5"
     zone.js "0.8.4"
 
-meepo-ua@^1.0.0:
+meepo-ua@>=1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/meepo-ua/-/meepo-ua-1.0.0.tgz#175d3bfeeceb219458d1fe7449e81f3b76507433"
   dependencies:
@@ -3256,7 +3268,7 @@ meepo-ua@^1.0.0:
     ua-parser-js "^0.7.17"
     zone.js "0.8.4"
 
-meepo-uuid@^1.0.8:
+meepo-uuid@>=1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/meepo-uuid/-/meepo-uuid-1.0.8.tgz#834e13cf8e12745ab19d3a303844b50988dabf0c"
   dependencies:
