@@ -14,7 +14,7 @@ import { WxService } from 'meepo-jssdk';
 @Component({
     selector: 'uploader',
     templateUrl: './uploader.html',
-    providers: [UploaderService],
+    providers: [UploaderService, WxService],
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./uploader.scss']
 })
@@ -34,7 +34,6 @@ export class UploaderComponent implements OnInit {
         public loader: UploaderLoaderService,
         public uploader: UploaderService,
         public cd: ChangeDetectorRef,
-        public axios: AxiosService,
         public core: CoreService,
         public ua: UaService,
         public wx: WxService
@@ -99,6 +98,16 @@ export class UploaderComponent implements OnInit {
     ngOnInit() {
         this.isWechat = this.ua.isWechat();
         this.isAndroid = this.ua.isAndroid();
+        if(this.isWechat){
+            this.wx.imgAdd$.subscribe(res=>{
+                this.files.push({
+                    finished: true,
+                    url: res.info,
+                    type: 'image/*'
+                });
+                this.cd.detectChanges();
+            });
+        }
     }
 
     ngAfterContentInit() {
@@ -111,21 +120,7 @@ export class UploaderComponent implements OnInit {
 
     wechatUplaoder() {
         if (this.isWechat) {
-            this.wx.chooseImage(this.max).subscribe(res => {
-                res.map(id => {
-                    this.wx.uploadImage(id).subscribe(sid => {
-                        let url = this.core.murl('entry//open', { __do: 'audio.image', m: 'imeepos_runner' }, false);
-                        this.axios.bpost(url, { serverId: sid }).then((res: any) => {
-                            this.files.push({
-                                finished: true,
-                                src: res.data.info,
-                                type: 'image/*'
-                            });
-                            this.cd.detectChanges();
-                        });
-                    });
-                })
-            });
+            this.wx.chooseImage(this.max);
         }
     }
 
