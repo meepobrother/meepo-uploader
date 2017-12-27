@@ -38,9 +38,10 @@ export class UploaderComponent implements OnInit {
         public ua: UaService,
         public wx: WxService
     ) {
-        this.loader.load$.subscribe(plupload => {
+        let loaded = this.loader.load$.subscribe(plupload => {
             this.plupload = plupload;
             this.init();
+            loaded.unsubscribe();
         });
         // 添加文件
         this.uploader.fileAdd$.debounceTime(300).subscribe(files => {
