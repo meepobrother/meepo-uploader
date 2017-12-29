@@ -11,6 +11,7 @@ import { CoreService } from 'meepo-core';
 
 import { UaService } from 'meepo-ua';
 import { WxService } from 'meepo-jssdk';
+
 @Component({
     selector: 'uploader',
     templateUrl: './uploader.html',
