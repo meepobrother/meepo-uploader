@@ -8,7 +8,6 @@ import { UploaderLoaderService } from '../loader';
 import { UploaderService } from '../uploader.service';
 import { AxiosService } from 'meepo-axios';
 import { CoreService } from 'meepo-core';
-
 import { UaService } from 'meepo-ua';
 import { WxService } from 'meepo-jssdk';
 
