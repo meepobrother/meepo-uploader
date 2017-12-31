@@ -1,7 +1,7 @@
 import {
     Component, OnInit, ContentChild, AfterContentInit,
     ChangeDetectionStrategy, ChangeDetectorRef, Input,
-    ViewChild, ElementRef
+    ViewChild, ElementRef, Output, EventEmitter
 } from '@angular/core';
 
 import { UploaderLoaderService } from '../loader';
@@ -24,12 +24,16 @@ export class UploaderComponent implements OnInit {
     @Input() quality: number = 90;
     @Input() auto: boolean = true;
     @Input() max: number = 9;
+
+    @Output() onUploader: EventEmitter<any> = new EventEmitter();
     @ViewChild('fileSelector') fileSelecter: ElementRef;
     plupload: any;
     files: any[] = [];
 
     isWechat: boolean = false;
     isAndroid: boolean = false;
+
+    
     constructor(
         public loader: UploaderLoaderService,
         public uploader: UploaderService,
@@ -67,10 +71,12 @@ export class UploaderComponent implements OnInit {
                     res = file;
                 }
             });
+            this._onUploader();
             this.cd.detectChanges();
         });
         this.uploader.filesRemoved$.subscribe(files => {
             this.files = files;
+            this._onUploader();
             this.cd.detectChanges();
         });
     }
@@ -85,6 +91,16 @@ export class UploaderComponent implements OnInit {
 
     reload(file) {
         this.uploader.reload(file);
+    }
+
+    _onUploader(){
+        let results = [];
+        this.files.map(res=>{
+            if(res.url){
+                results.push(res.url);
+            }
+        });
+        this.onUploader.emit(results);
     }
 
     remove(file: any) {
@@ -106,6 +122,7 @@ export class UploaderComponent implements OnInit {
                     url: res.info,
                     type: 'image/*'
                 });
+                this._onUploader();
                 this.cd.detectChanges();
             });
         }
