@@ -3185,8 +3185,8 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
 meepo-axios@>=1.2.0, meepo-axios@>=1.2.1:
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/meepo-axios/-/meepo-axios-1.2.9.tgz#cb305f99c0c64566f34e08b006f0c7c5255befe2"
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/meepo-axios/-/meepo-axios-1.3.7.tgz#54e1a15550e1a673d927ac76ac8a6e4510713582"
   dependencies:
     "@angular/common" "5.2.0-beta.1"
     "@angular/core" "5.2.0-beta.1"
@@ -3211,8 +3211,8 @@ meepo-base64@>=1.1.2:
     zone.js "0.8.4"
 
 meepo-core@>=2.9.4, meepo-core@>=3.0.4, meepo-core@>=3.1.3:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-3.1.6.tgz#98d2ca102439bd1b7de9a6c34c48a32e096ffbc9"
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-3.2.4.tgz#42dc936a1cddce80342d6dc58a299154eed27454"
   dependencies:
     "@angular/common" "5.2.0-beta.1"
     "@angular/core" "5.2.0-beta.1"
@@ -3224,8 +3224,8 @@ meepo-core@>=2.9.4, meepo-core@>=3.0.4, meepo-core@>=3.1.3:
     zone.js "0.8.4"
 
 meepo-jssdk@>=1.0.2:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/meepo-jssdk/-/meepo-jssdk-1.1.0.tgz#0f29c40ce620c84fc25a4338b223f0f966ad6463"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/meepo-jssdk/-/meepo-jssdk-1.1.1.tgz#c170819eef6fb1710f3811e404ab04765cb0f1ba"
   dependencies:
     "@angular/common" "5.2.0-beta.1"
     "@angular/core" "5.2.0-beta.1"
@@ -3272,8 +3272,8 @@ meepo-uuid@>=1.0.8, meepo-uuid@>=1.1.1:
     zone.js "0.8.4"
 
 meepo-xscroll@>=1.2.9, meepo-xscroll@>=1.3.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/meepo-xscroll/-/meepo-xscroll-1.3.1.tgz#6c38bcd5f63207ed391e6b188443814710c2adc0"
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/meepo-xscroll/-/meepo-xscroll-1.3.6.tgz#33082a67e4667091e29033bda7d1f431e7d1d35e"
   dependencies:
     "@angular/common" "5.2.0-beta.1"
     "@angular/core" "5.2.0-beta.1"
@@ -3582,8 +3582,8 @@ node-sass@^4.3.0, node-sass@^4.7.2:
     "true-case-path" "^1.0.2"
 
 nodemon@^1.13.3:
-  version "1.14.6"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.14.6.tgz#d1b2fa204137b8d2c9242d797cd0b394d05fe77d"
+  version "1.14.7"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.14.7.tgz#ef544baa64603155c2ee6dcfba9204a2cd46d355"
   dependencies:
     chokidar "^1.7.0"
     debug "^2.6.8"

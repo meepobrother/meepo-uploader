@@ -1,4 +1,3 @@
-
 .weui-uploader__file {
     overflow: hidden;
     img {
@@ -41,6 +40,10 @@
         background-size: cover;
         z-index: 9;
     }
+}
+
+.weui-uploader {
+    padding: 10px 15px;
 }
 
 .meepo_uploader {
