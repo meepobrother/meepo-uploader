@@ -97,18 +97,24 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler-cli@5.2.0-beta.1":
-  version "5.2.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.2.0-beta.1.tgz#171b0dbe8f62111e708f48ef84b9996501431935"
+"@angular/common@>=5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.1.2.tgz#b2659161575d463bb8b3e30e37434b26d70366b4"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/compiler-cli@>=5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.1.2.tgz#70addc11b6528f087abe809f94acedecdfc9c8f6"
   dependencies:
     chokidar "^1.4.2"
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
     tsickle "^0.25.5"
 
-"@angular/compiler@5.2.0-beta.1":
-  version "5.2.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.2.0-beta.1.tgz#25f364f0f387d34628552860593170ec572d8885"
+"@angular/compiler@>=5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.1.2.tgz#4dfd0dd7fab39a14a1a104097c2f6af470ddabdb"
   dependencies:
     tslib "^1.7.1"
 
@@ -118,21 +124,33 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/core@>=5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.1.2.tgz#751070c0f4e5a8c4e2170204e08eca06391b84b1"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/forms@5.2.0-beta.1":
   version "5.2.0-beta.1"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-5.2.0-beta.1.tgz#f32dabf92a22b9cdc46e2a50bbbf48f154f0c558"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser-dynamic@5.2.0-beta.1":
-  version "5.2.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.0-beta.1.tgz#c0228aeaac78901a2d5c1770a3737113f89fb53c"
+"@angular/platform-browser-dynamic@>=5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.1.2.tgz#120d49ce16bcb91b8ac1c5e5c634fba592359ad7"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/platform-browser@5.2.0-beta.1":
   version "5.2.0-beta.1"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.2.0-beta.1.tgz#44a971d9cfd3675c10f9924ffe0784b23a2e6bd3"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/platform-browser@>=5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.1.2.tgz#6faf926b9b41b6d54d873f3dcc4f31ad35fd0c38"
   dependencies:
     tslib "^1.7.1"
 
@@ -2848,7 +2866,7 @@ istanbul-lib-instrument@^1.1.3:
     istanbul-lib-coverage "^1.1.1"
     semver "^5.3.0"
 
-js-base64@^2.1.8, js-base64@^2.1.9, js-base64@^2.4.0:
+js-base64@>=2.4.0, js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.0.tgz#9e566fee624751a1d720c966cd6226d29d4025aa"
 
@@ -3185,12 +3203,12 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
 meepo-axios@>=1.2.0, meepo-axios@>=1.2.1:
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/meepo-axios/-/meepo-axios-1.3.7.tgz#54e1a15550e1a673d927ac76ac8a6e4510713582"
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/meepo-axios/-/meepo-axios-1.3.8.tgz#b0dba4694dcfdbe6af27ace0465d3ba8895776f1"
   dependencies:
-    "@angular/common" "5.2.0-beta.1"
-    "@angular/core" "5.2.0-beta.1"
-    "@angular/platform-browser" "5.2.0-beta.1"
+    "@angular/common" ">=5.1.2"
+    "@angular/core" ">=5.1.2"
+    "@angular/platform-browser" ">=5.1.2"
     meepo-base64 ">=1.1.2"
     meepo-core ">=3.1.3"
     meepo-uuid ">=1.1.1"
@@ -3199,24 +3217,24 @@ meepo-axios@>=1.2.0, meepo-axios@>=1.2.1:
     zone.js "0.8.4"
 
 meepo-base64@>=1.1.2:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/meepo-base64/-/meepo-base64-1.1.5.tgz#05ecc48d2fdb537ce5370a127bb00c53d932bd0b"
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/meepo-base64/-/meepo-base64-1.1.6.tgz#dddb14a59736963267d86e839bcfb55659bbfd17"
   dependencies:
-    "@angular/common" "5.2.0-beta.1"
-    "@angular/core" "5.2.0-beta.1"
-    "@angular/platform-browser" "5.2.0-beta.1"
-    js-base64 "^2.4.0"
+    "@angular/common" ">=5.1.2"
+    "@angular/core" ">=5.1.2"
+    "@angular/platform-browser" ">=5.1.2"
+    js-base64 ">=2.4.0"
     reflect-metadata "^0.1.10"
     rxjs "^5.5.5"
     zone.js "0.8.4"
 
 meepo-core@>=2.9.4, meepo-core@>=3.0.4, meepo-core@>=3.1.3:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-3.2.4.tgz#42dc936a1cddce80342d6dc58a299154eed27454"
+  version "3.2.7"
+  resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-3.2.7.tgz#4cc309082b9116b51d6b11ed575620e6f278d8f2"
   dependencies:
-    "@angular/common" "5.2.0-beta.1"
-    "@angular/core" "5.2.0-beta.1"
-    "@angular/platform-browser" "5.2.0-beta.1"
+    "@angular/common" ">=5.1.2"
+    "@angular/core" ">=5.1.2"
+    "@angular/platform-browser" ">=5.1.2"
     meepo-popover ">=1.0.3"
     meepo-xscroll ">=1.3.0"
     reflect-metadata "^0.1.10"
@@ -3234,6 +3252,18 @@ meepo-jssdk@>=1.0.2:
     meepo-core ">=3.0.4"
     reflect-metadata "^0.1.10"
     rxjs "^5.5.5"
+    zone.js "0.8.4"
+
+meepo-loader@>=1.0.9:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/meepo-loader/-/meepo-loader-1.1.1.tgz#8bb3bd46d27b0cbd519c63826f452be1dbe3e427"
+  dependencies:
+    "@angular/common" "5.2.0-beta.1"
+    "@angular/core" "5.2.0-beta.1"
+    "@angular/platform-browser" "5.2.0-beta.1"
+    reflect-metadata "^0.1.10"
+    rxjs "^5.5.5"
+    systemjs "^0.20.19"
     zone.js "0.8.4"
 
 meepo-popover@>=1.0.3:
@@ -3261,23 +3291,24 @@ meepo-ua@>=1.0.0:
     zone.js "0.8.4"
 
 meepo-uuid@>=1.0.8, meepo-uuid@>=1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/meepo-uuid/-/meepo-uuid-1.1.1.tgz#acc49a6dac78f5ca0d13119dd8b6c3607914e473"
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/meepo-uuid/-/meepo-uuid-1.1.2.tgz#181aa33edc198433251f5b29ea77cdb61356f988"
   dependencies:
-    "@angular/common" "5.2.0-beta.1"
-    "@angular/core" "5.2.0-beta.1"
-    "@angular/platform-browser" "5.2.0-beta.1"
+    "@angular/common" ">=5.1.2"
+    "@angular/core" ">=5.1.2"
+    "@angular/platform-browser" ">=5.1.2"
     reflect-metadata "^0.1.10"
     rxjs "^5.5.5"
     zone.js "0.8.4"
 
 meepo-xscroll@>=1.2.9, meepo-xscroll@>=1.3.0:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/meepo-xscroll/-/meepo-xscroll-1.3.6.tgz#33082a67e4667091e29033bda7d1f431e7d1d35e"
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/meepo-xscroll/-/meepo-xscroll-1.4.6.tgz#542d8f1e1da35e391a032cd015048a1f898c7389"
   dependencies:
-    "@angular/common" "5.2.0-beta.1"
-    "@angular/core" "5.2.0-beta.1"
-    "@angular/platform-browser" "5.2.0-beta.1"
+    "@angular/common" ">=5.1.2"
+    "@angular/core" ">=5.1.2"
+    "@angular/platform-browser" ">=5.1.2"
+    meepo-loader ">=1.0.9"
     reflect-metadata "^0.1.10"
     rxjs "^5.5.5"
     xscroll "^3.1.3"
@@ -4312,12 +4343,12 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
     supports-color "^3.2.3"
 
 postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.13:
-  version "6.0.14"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.14.tgz#5534c72114739e75d0afcf017db853099f562885"
+  version "6.0.15"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.15.tgz#f460cd6269fede0d1bf6defff0b934a9845d974d"
   dependencies:
     chalk "^2.3.0"
     source-map "^0.6.1"
-    supports-color "^4.4.0"
+    supports-color "^5.1.0"
 
 prepend-http@^1.0.0, prepend-http@^1.0.1:
   version "1.0.4"
@@ -5372,9 +5403,15 @@ supports-color@^3.2.3:
   dependencies:
     has-flag "^1.0.0"
 
-supports-color@^4.0.0, supports-color@^4.2.1, supports-color@^4.4.0:
+supports-color@^4.0.0, supports-color@^4.2.1:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.5.0.tgz#be7a0de484dec5c5cddf8b3d59125044912f635b"
+  dependencies:
+    has-flag "^2.0.0"
+
+supports-color@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.1.0.tgz#058a021d1b619f7ddf3980d712ea3590ce7de3d5"
   dependencies:
     has-flag "^2.0.0"
 
@@ -5393,6 +5430,10 @@ svgo@^0.7.0:
 symbol-observable@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
+
+systemjs@^0.20.19:
+  version "0.20.19"
+  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-0.20.19.tgz#c2b9e79c19f4bea53a19b1ed3f974ffb463be949"
 
 tapable@^0.2.7:
   version "0.2.8"
