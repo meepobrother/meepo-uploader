@@ -98,14 +98,14 @@
     tslib "^1.7.1"
 
 "@angular/common@>=5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.1.2.tgz#b2659161575d463bb8b3e30e37434b26d70366b4"
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.1.3.tgz#db517c00a95f72885eb2091098eaed4f95494a63"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/compiler-cli@>=5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.1.2.tgz#70addc11b6528f087abe809f94acedecdfc9c8f6"
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.1.3.tgz#e9cfd183a8a12fddad0188d2b7e4e9a45f302d82"
   dependencies:
     chokidar "^1.4.2"
     minimist "^1.2.0"
@@ -113,8 +113,8 @@
     tsickle "^0.25.5"
 
 "@angular/compiler@>=5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.1.2.tgz#4dfd0dd7fab39a14a1a104097c2f6af470ddabdb"
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.1.3.tgz#125008477895aee1bf71294bf981a4ba184c1e59"
   dependencies:
     tslib "^1.7.1"
 
@@ -125,8 +125,8 @@
     tslib "^1.7.1"
 
 "@angular/core@>=5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.1.2.tgz#751070c0f4e5a8c4e2170204e08eca06391b84b1"
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.1.3.tgz#b739f69834c344285250a384d0c203dd36778a37"
   dependencies:
     tslib "^1.7.1"
 
@@ -136,21 +136,21 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser-dynamic@>=5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.1.2.tgz#120d49ce16bcb91b8ac1c5e5c634fba592359ad7"
+"@angular/forms@>=5.1.2":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-5.1.3.tgz#fe4c0c37c504e78c85f8e50db6e098705fa72f4c"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@5.2.0-beta.1":
-  version "5.2.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.2.0-beta.1.tgz#44a971d9cfd3675c10f9924ffe0784b23a2e6bd3"
+"@angular/platform-browser-dynamic@>=5.1.2":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.1.3.tgz#ad37e4dbd5251e7ea256ad9323fe11c848d04050"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/platform-browser@>=5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.1.2.tgz#6faf926b9b41b6d54d873f3dcc4f31ad35fd0c38"
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.1.3.tgz#5abe7809009eff6bff3bf89faba96fe066fb2036"
   dependencies:
     tslib "^1.7.1"
 
@@ -182,8 +182,8 @@
   resolved "https://registry.yarnpkg.com/@schematics/schematics/-/schematics-0.0.11.tgz#c8f70f270ed38f29b2873248126fd59abd635862"
 
 "@types/node@^8.5.1":
-  version "8.5.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.2.tgz#83b8103fa9a2c2e83d78f701a9aa7c9539739aa5"
+  version "8.5.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.5.tgz#6f9e8164ae1a55a9beb1d2571cfb7acf9d720c61"
 
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
@@ -798,8 +798,8 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000784"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000784.tgz#1be95012d9489c7719074f81aee57dbdffe6361b"
+  version "1.0.30000787"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000787.tgz#ca07a281be536a88bd7fac96ba895f3cf53f811b"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -3229,8 +3229,8 @@ meepo-base64@>=1.1.2:
     zone.js "0.8.4"
 
 meepo-core@>=2.9.4, meepo-core@>=3.0.4, meepo-core@>=3.1.3:
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-3.2.7.tgz#4cc309082b9116b51d6b11ed575620e6f278d8f2"
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/meepo-core/-/meepo-core-3.2.8.tgz#a30ba82a2830d1fbec06134e9957d850f1ba92a4"
   dependencies:
     "@angular/common" ">=5.1.2"
     "@angular/core" ">=5.1.2"
@@ -3255,25 +3255,24 @@ meepo-jssdk@>=1.0.2:
     zone.js "0.8.4"
 
 meepo-loader@>=1.0.9:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/meepo-loader/-/meepo-loader-1.1.1.tgz#8bb3bd46d27b0cbd519c63826f452be1dbe3e427"
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/meepo-loader/-/meepo-loader-1.1.2.tgz#dd1968b0b5e330e02572a5eaa43f4afad7ad70c8"
   dependencies:
-    "@angular/common" "5.2.0-beta.1"
-    "@angular/core" "5.2.0-beta.1"
-    "@angular/platform-browser" "5.2.0-beta.1"
+    "@angular/common" ">=5.1.2"
+    "@angular/core" ">=5.1.2"
+    "@angular/platform-browser" ">=5.1.2"
     reflect-metadata "^0.1.10"
     rxjs "^5.5.5"
-    systemjs "^0.20.19"
     zone.js "0.8.4"
 
 meepo-popover@>=1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/meepo-popover/-/meepo-popover-1.0.3.tgz#ceed4b02c32cb18838c86891003f82311de430fb"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/meepo-popover/-/meepo-popover-1.0.4.tgz#80f29bcb0b7ca61cfef36274ef1ea8bc1d3b1f45"
   dependencies:
-    "@angular/common" "5.2.0-beta.1"
-    "@angular/core" "5.2.0-beta.1"
-    "@angular/forms" "5.2.0-beta.1"
-    "@angular/platform-browser" "5.2.0-beta.1"
+    "@angular/common" ">=5.1.2"
+    "@angular/core" ">=5.1.2"
+    "@angular/forms" ">=5.1.2"
+    "@angular/platform-browser" ">=5.1.2"
     meepo-uuid ">=1.1.1"
     meepo-xscroll ">=1.2.9"
     reflect-metadata "^0.1.10"
@@ -3797,8 +3796,10 @@ p-finally@^1.0.0:
   resolved "https://registry.yarnpkg.com/p-finally/-/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
 
 p-limit@^1.0.0, p-limit@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-1.1.0.tgz#b07ff2d9a5d88bec806035895a2bab66a27988bc"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-1.2.0.tgz#0e92b6bedcb59f022c13d0f1949dc82d15909f1c"
+  dependencies:
+    p-try "^1.0.0"
 
 p-locate@^2.0.0:
   version "2.0.0"
@@ -3809,6 +3810,10 @@ p-locate@^2.0.0:
 p-map@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.2.0.tgz#e4e94f311eabbc8633a1e79908165fca26241b6b"
+
+p-try@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/p-try/-/p-try-1.0.0.tgz#cbc79cdbaf8fd4228e13f621f2b1a237c1b207b3"
 
 package-json@^4.0.0:
   version "4.0.1"
@@ -4147,8 +4152,8 @@ postcss-load-plugins@^2.3.0:
     object-assign "^4.1.0"
 
 postcss-loader@^2.0.8:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.0.9.tgz#001fdf7bfeeb159405ee61d1bb8e59b528dbd309"
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.0.10.tgz#090db0540140bd56a7a7f717c41bc29aeef4c674"
   dependencies:
     loader-utils "^1.1.0"
     postcss "^6.0.0"
@@ -5430,10 +5435,6 @@ svgo@^0.7.0:
 symbol-observable@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
-
-systemjs@^0.20.19:
-  version "0.20.19"
-  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-0.20.19.tgz#c2b9e79c19f4bea53a19b1ed3f974ffb463be949"
 
 tapable@^0.2.7:
   version "0.2.8"

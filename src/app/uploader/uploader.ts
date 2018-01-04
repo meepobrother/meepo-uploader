@@ -157,7 +157,7 @@ export class UploaderComponent implements OnInit {
                 file.imgSrc = reader.result;
                 this.uploader.addFile(file);
             };
-            reader.readAsDataURL(files[0]);
+            reader.readAsDataURL(file);
         }
     }
 }
