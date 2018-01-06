@@ -1,6 +1,6 @@
 {
     "name": "meepo-uploader",
-    "version": "1.6.5",
+    "version": "1.6.6",
     "description": "uploader for angular",
     "main": "./bundles/meepo.umd.js",
     "module": "./esm5/meepo.js",
@@ -56,6 +56,6 @@
         "meepo-uuid": ">=1.0.8",
         "reflect-metadata": "^0.1.10",
         "rxjs": "^5.5.0",
-        "zone.js": "^0.8.4"
+        "zone.js": "0.8.4"
     }
 }
