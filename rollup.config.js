@@ -243,7 +243,7 @@ let globals = {
     'meepo-axios': 'meepo-axios',
     'meepo-base64': 'meepo-base64',
     'meepo-jssdk': 'meepo-jssdk',
-    'meepo-ua': 'meepo-ua'
+    'meepo-ua': 'meepo-ua',
 };
 
 let plugins = [
